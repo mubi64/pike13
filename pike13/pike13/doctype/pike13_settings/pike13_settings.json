@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-12-16 09:08:07.007092",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "authentication_section",
+  "client_id",
+  "client_secret",
+  "redirect_uri",
+  "pike13_site_url",
+  "column_break_4",
+  "grant_type",
+  "auth_code",
+  "get_auth_code",
+  "access_token",
+  "get_access_token",
+  "sync_data_section",
+  "sync_people",
+  "people_synced"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Id",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_secret",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "redirect_uri",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Redirect URI",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grant_type",
+   "fieldtype": "Data",
+   "label": "Grant Type"
+  },
+  {
+   "fieldname": "auth_code",
+   "fieldtype": "Data",
+   "label": "Auth Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "get_auth_code",
+   "fieldtype": "Button",
+   "label": "Get Auth Code"
+  },
+  {
+   "depends_on": "eval:doc.auth_code",
+   "fieldname": "access_token",
+   "fieldtype": "Data",
+   "label": "Access Token",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.auth_code",
+   "fieldname": "get_access_token",
+   "fieldtype": "Button",
+   "label": "Get Access Token"
+  },
+  {
+   "fieldname": "authentication_section",
+   "fieldtype": "Section Break",
+   "label": "Authentication"
+  },
+  {
+   "fieldname": "pike13_site_url",
+   "fieldtype": "Data",
+   "label": "Pike13 Site URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sync_data_section",
+   "fieldtype": "Section Break",
+   "label": "Sync Data"
+  },
+  {
+   "description": "Customer is termed as People in Pike13",
+   "fieldname": "sync_people",
+   "fieldtype": "Button",
+   "label": "Sync People"
+  },
+  {
+   "fieldname": "people_synced",
+   "fieldtype": "Percent",
+   "label": "People Synced"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-12-16 12:23:30.544100",
+ "modified_by": "Administrator",
+ "module": "Pike13",
+ "name": "Pike13 Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
