@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pike13 *.css
+recursive-include pike13 *.csv
+recursive-include pike13 *.html
+recursive-include pike13 *.ico
+recursive-include pike13 *.js
+recursive-include pike13 *.json
+recursive-include pike13 *.md
+recursive-include pike13 *.png
+recursive-include pike13 *.py
+recursive-include pike13 *.svg
+recursive-include pike13 *.txt
+recursive-exclude pike13 *.pyc
