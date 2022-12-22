@@ -9,6 +9,21 @@ app_color = "grey"
 app_email = "info@sowaan.com"
 app_license = "MIT"
 
+fixtures = [
+    {
+		"doctype":"Custom Field",
+		"filters":[
+			[
+				"fieldname",
+                "in",
+				(
+					"pike13_customer_id", "pike13_invoice_number", "pike13_item_code"
+				)
+			]
+		]
+	}, 
+]
+
 # Includes in <head>
 # ------------------
 
