@@ -10,16 +10,14 @@
   "client_id",
   "client_secret",
   "redirect_uri",
-  "pike13_site_url",
-  "column_break_4",
   "grant_type",
+  "column_break_4",
   "auth_code",
   "get_auth_code",
   "access_token",
   "get_access_token",
   "sync_data_section",
-  "sync_people",
-  "people_synced"
+  "sync_invoices"
  ],
  "fields": [
   {
@@ -82,32 +80,21 @@
    "label": "Authentication"
   },
   {
-   "fieldname": "pike13_site_url",
-   "fieldtype": "Data",
-   "label": "Pike13 Site URL",
-   "reqd": 1
-  },
-  {
    "fieldname": "sync_data_section",
    "fieldtype": "Section Break",
    "label": "Sync Data"
   },
   {
-   "description": "Customer is termed as People in Pike13",
-   "fieldname": "sync_people",
+   "description": "It will fetch invoices from Pike13 sites from \"Synced till\" to today",
+   "fieldname": "sync_invoices",
    "fieldtype": "Button",
-   "label": "Sync People"
-  },
-  {
-   "fieldname": "people_synced",
-   "fieldtype": "Percent",
-   "label": "People Synced"
+   "label": "Sync Invoices"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-16 12:23:30.544100",
+ "modified": "2022-12-22 06:59:21.948333",
  "modified_by": "Administrator",
  "module": "Pike13",
  "name": "Pike13 Settings",

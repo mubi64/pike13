@@ -33,15 +33,17 @@ frappe.ui.form.on('Pike13 Settings', {
 			}
 		});
 	},
-	sync_people: function(frm) {
+	sync_invoices: function(frm) {
 		frappe.call({
-			method: "pike13.pike13.doctype.pike13_settings.pike13_settings.sync_people",
+			method: "pike13.pike13.doctype.pike13_settings.pike13_settings.sync_invoices",
 			callback: function(r) {
 				if (!r.exc) {
 					// frm.set_value('access_token', r.message)
 					// frm.save();
 				}
-			}
+			},
+			freeze: true,	
+			freeze_message: __('Syncing data from pike13...')
 		});
 	}
 });

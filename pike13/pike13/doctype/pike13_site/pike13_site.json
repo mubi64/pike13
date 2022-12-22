@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Pike13-Site-.#####",
+ "creation": "2022-12-22 07:12:20.648068",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "site_name",
+  "pike13_site_url",
+  "default_customer",
+  "warehouse",
+  "cost_center",
+  "column_break_6",
+  "synced_till",
+  "sales_tax_template",
+  "sync_status",
+  "mode_of_payments_mapping_section",
+  "get_pike13_mode_of_payments",
+  "pike13_to_erp_mode_of_payment_mapping"
+ ],
+ "fields": [
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Site Name"
+  },
+  {
+   "fieldname": "pike13_site_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Site Url",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "description": "If customer is not found in pike13 invoice then use this customer as default",
+   "fieldname": "default_customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Default Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "description": "Source warehouse to update stock",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "synced_till",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Synced till",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_tax_template",
+   "fieldtype": "Link",
+   "label": "Sales Tax Template",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "fieldname": "sync_status",
+   "fieldtype": "Long Text",
+   "label": "Sync Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mode_of_payments_mapping_section",
+   "fieldtype": "Section Break",
+   "label": "Mode of Payments Mapping"
+  },
+  {
+   "fieldname": "pike13_to_erp_mode_of_payment_mapping",
+   "fieldtype": "Table",
+   "label": "Pike13 to ERP Mode of payment mapping",
+   "options": "Pike13 Site Mode of Payments"
+  },
+  {
+   "description": "It will fetch mode of payments from Pike13",
+   "fieldname": "get_pike13_mode_of_payments",
+   "fieldtype": "Button",
+   "label": "Get Pike13 Mode of Payments"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-22 09:12:08.727398",
+ "modified_by": "Administrator",
+ "module": "Pike13",
+ "name": "Pike13 Site",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
