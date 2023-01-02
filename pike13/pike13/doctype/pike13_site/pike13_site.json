@@ -13,6 +13,7 @@
   "default_customer",
   "warehouse",
   "cost_center",
+  "receivable_account",
   "column_break_6",
   "synced_till",
   "sales_tax_template",
@@ -103,11 +104,18 @@
    "fieldname": "enabled",
    "fieldtype": "Check",
    "label": "Enabled"
+  },
+  {
+   "fieldname": "receivable_account",
+   "fieldtype": "Link",
+   "label": "Receivable Account",
+   "options": "Account",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-22 09:12:08.727398",
+ "modified": "2023-01-02 08:31:33.467746",
  "modified_by": "Administrator",
  "module": "Pike13",
  "name": "Pike13 Site",

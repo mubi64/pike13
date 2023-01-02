@@ -142,7 +142,7 @@ def insert_invoices_from_pike13(invoices, doc, site):
 	curr_invoice = {}
 	for x in invoices:
 		erp_invoices = frappe.get_all("Sales Invoice", filters={
-			"pike13_invoice_number":x.get("id")
+			"pike13_record_id":x.get("id")
 		})
 		#if length is more than 0 then this invoice is already synced with erp
 		if(len(erp_invoices) == 0):
@@ -183,10 +183,13 @@ def insert_invoices_from_pike13(invoices, doc, site):
 
 			si = frappe.new_doc("Sales Invoice")
 			si.customer = erp_customer
+			si.set_posting_time = 1
 			si.posting_date = curr_invoice.get("invoice_date") 
 			si.due_date = curr_invoice.get("invoice_date") 
-			si.pike13_invoice_number = curr_invoice.get("id") 
+			si.pike13_record_id = curr_invoice.get("id") 
+			si.pike13_invoice_number = curr_invoice.get("invoice_number") 
 			si.taxes_and_charges = sales_tax_template
+			si.debit_to = site.receivable_account
 			si.update_stock = 1
 			si.set_warehouse = site.warehouse
 			
@@ -214,14 +217,18 @@ def insert_invoices_from_pike13(invoices, doc, site):
 				if(len(db_items)>0):
 					erp_item = db_items[0]
 					discount = 0
-					for dis in i.get("adjustments"):
-						if dis.get("type") == "Discount":
-							discount += float(dis.get("amount"))
+					rate = i.get("amount_cents")
+					if i.get("discount_total_cents") is not None:
+						rate = rate + i.get("discount_total_cents")
+					# for dis in i.get("adjustments"):
+					# 	if dis.get("type") == "Discount":
+					# 		discount += dis.get("amount_cents")
 					
+					# print('******DISCOUNT*******')
+					# print(str(round(discount/100,2)))
 					si.append("items", {
 						"item_code": erp_item.name,
-						"rate": i.get("amount"),
-						"discount_amount": discount,
+						"rate": round(rate/100,2),
 						"qty": 1
 					})
 					

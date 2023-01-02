@@ -38,3 +38,12 @@ frappe.ui.form.on('Pike13 Site', {
 		});
 	}
 });
+
+cur_frm.set_query("receivable_account", function(doc) {
+	return {
+		filters: {
+			'account_type': 'Receivable',
+			'is_group': 0,
+		}
+	}
+});

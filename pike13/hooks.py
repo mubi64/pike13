@@ -17,7 +17,7 @@ fixtures = [
 				"fieldname",
                 "in",
 				(
-					"pike13_customer_id", "pike13_invoice_number", "pike13_item_code"
+					"pike13_customer_id", "pike13_invoice_number", "pike13_record_id", "pike13_item_code"
 				)
 			]
 		]
