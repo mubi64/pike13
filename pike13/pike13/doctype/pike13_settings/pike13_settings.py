@@ -112,7 +112,7 @@ def get_invoices_from_pike13(site, doc):
 	sync_from = site.synced_till
 	while(1==1):
 		try:
-			r = requests.get(site.pike13_site_url+"/api/v2/desk/invoices?per_page=100&created_since="+str(sync_from), headers=headers).json()
+			r = requests.get(site.pike13_site_url+"/api/v2/desk/invoices?per_page=100&state=closed&created_since="+str(sync_from), headers=headers).json()
 		except requests.exceptions.HTTPError:
 			button_label = frappe.bold(_("Get Access Token"))
 			frappe.throw(
