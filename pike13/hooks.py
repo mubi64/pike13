@@ -121,23 +121,23 @@ fixtures = [
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 #	"all": [
 #		"pike13.tasks.all"
 #	],
 #	"daily": [
 #		"pike13.tasks.daily"
 #	],
-#	"hourly": [
-#		"pike13.tasks.hourly"
-#	],
+	"hourly": [
+		"pike13.pike13.doctype.pike13_settings.pike13_settings.sync_invoices"
+	],
 #	"weekly": [
 #		"pike13.tasks.weekly"
 #	]
 #	"monthly": [
 #		"pike13.tasks.monthly"
 #	]
-# }
+}
 
 # Testing
 # -------
