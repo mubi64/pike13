@@ -290,6 +290,9 @@ def get_erp_customer(id, doc, site):
             )
 
         people = r.get("people")[0]
+        phone_number = 0
+        if people.get("phone"):
+            phone_number = people.get("phone")[1:]
         customer = frappe.get_doc(
             {
                 "doctype": "Customer",
@@ -298,7 +301,7 @@ def get_erp_customer(id, doc, site):
                 "customer_group": "All Customer Groups",
                 "territory": "All Territories",
                 "email_id": people.get("email"),
-                "mobile_no": people.get("phone"),
+                "mobile_no": phone_number,
                 # "address_line1": people.get("address")
             }
         ).insert(ignore_permissions=True)
