@@ -291,8 +291,8 @@ def get_erp_customer(id, doc, site):
 
         people = r.get("people")[0]
         phone_number = 0
-        if people.get("phone"):
-            phone_number = people.get("phone")[1:]
+        if people.get("phone") and people.get("phone").isnumeric():
+            phone_number = people.get("phone")
         customer = frappe.get_doc(
             {
                 "doctype": "Customer",
