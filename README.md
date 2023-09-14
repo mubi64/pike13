@@ -23,6 +23,7 @@ The Pike13 Frappe App is a powerful tool for integrating ERPNext with Pike13. Th
 Before you begin, ensure that you have the following prerequisites in place:
 
 - [Frappe Framework](https://frappeframework.com/) is installed and configured.
+- [ERPNext](https://github.com/frappe/erpnext) is installed and configured.
 
 ### Installing the Pike13 App
 
